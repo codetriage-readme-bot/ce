@@ -2,6 +2,8 @@
 
 Powerful self-hosted, on-premise issue tracker software-easy, fast and intuitive.
 
+![Atom Bug Tracker Issue Creation](https://raw.githubusercontent.com/atombugtracker/ce/master/images/atombt_3.png)
+
 You can help us, fork the repo and pull your changes. We believe in open source (We believe in you too). If you want to share, modify or 
 release our software, please write our credits.
 ## WORK IN PROGRESS
