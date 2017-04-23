@@ -1,7 +1,8 @@
 CREDITS:
 
 - SerNico (Founder)
-- Professor Zoom (@R3vFl4sh, front-end)
+- R3vFl4sh (front-end)
+- Sayan Bhomwik (designer)
 
 DONATORS:
 
