@@ -18,3 +18,6 @@ Documentation: Cooming Soon
 
 Mail: support@atombt.com
 
+Donate us: [paypal](paypal.me/webdevlop) . I (founder) write you in credits!
+
+
