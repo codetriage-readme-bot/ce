@@ -132,4 +132,4 @@ $autoload['language'] = array('atombt');
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Issues_models');
+$autoload['model'] = array('Issues_models','Projects_models');

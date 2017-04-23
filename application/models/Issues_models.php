@@ -34,19 +34,24 @@ class Issues_Models extends CI_Model{
     public function update_issues($id){ 
         $data = array(
         'title' => $this->input->post('title'),
-        'slug' => $slug,
+       // 'slug' => $this->input->post('slug'),
         'text' => $this->input->post('text'),
         'project' => $this->input->post('project'),
         'milestone' => $this->input->post('milestone'),
         'type' => $this->input->post('type')
         );
         
-         $this->db->where('id',$id);
-        return $this->db->update('issue',$data);
+         $this->db->update('issue', $data, array('id' => $id));
     }
     
     public function get_type(){
         $query = $this->db->get('type');
         return $query->result_array();
     }
+    
+    public function resolve_issue( $issue_id )
+	{
+		$this->_set_last_update( $issue_id );
+		return $this->db->where('id', $issue_id)->limit(1)->update('issues', array('resolved' => 1));				
+	}	
 }

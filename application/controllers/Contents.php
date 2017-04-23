@@ -7,8 +7,7 @@ class Contents extends CI_Controller{
     }
     
     public function credits(){
-        // About Page
-        // About the app
+        
         
     }
     

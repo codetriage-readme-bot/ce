@@ -14,7 +14,11 @@ class Dashboard extends CI_Controller{
     
     public function newa(){
         $this->load->view('header');
+        $this->load->view('newa');
         
     }
     
+    public function slack(){
+        
+    }
 }
