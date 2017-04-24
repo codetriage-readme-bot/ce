@@ -7,18 +7,9 @@
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `test`
---
 
 -- --------------------------------------------------------
 
@@ -30,7 +21,7 @@ CREATE TABLE `aauth_groups` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `definition` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+); 
 
 --
 -- Dump dei dati per la tabella `aauth_groups`
@@ -40,7 +31,7 @@ INSERT INTO `aauth_groups` (`id`, `name`, `definition`) VALUES
 (1, 'Admin', 'Super Admin Group'),
 (2, 'Enterprise', 'Enterprise User Group'),
 (3, 'Public', 'Public Access Group'),
-(4, 'Default', 'Default Access Group'),
+(4, 'Default', 'Default Access Group');
 
 
 -- --------------------------------------------------------
@@ -52,7 +43,7 @@ INSERT INTO `aauth_groups` (`id`, `name`, `definition`) VALUES
 CREATE TABLE `aauth_group_to_group` (
   `group_id` int(11) UNSIGNED NOT NULL,
   `subgroup_id` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);
 
 -- --------------------------------------------------------
 
@@ -65,7 +56,7 @@ CREATE TABLE `aauth_login_attempts` (
   `ip_address` varchar(39) DEFAULT '0',
   `timestamp` datetime DEFAULT NULL,
   `login_attempts` tinyint(2) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -77,7 +68,7 @@ CREATE TABLE `aauth_perms` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `definition` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);
 
 --
 -- Dump dei dati per la tabella `aauth_perms`
@@ -97,7 +88,7 @@ INSERT INTO `aauth_perms` (`id`, `name`, `definition`) VALUES
 CREATE TABLE `aauth_perm_to_group` (
   `perm_id` int(11) UNSIGNED NOT NULL,
   `group_id` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);
 
 --
 -- Dump dei dati per la tabella `aauth_perm_to_group`
@@ -115,8 +106,7 @@ INSERT INTO `aauth_perm_to_group` (`perm_id`, `group_id`) VALUES
 CREATE TABLE `aauth_perm_to_user` (
   `perm_id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+);
 -- --------------------------------------------------------
 
 --
@@ -133,7 +123,7 @@ CREATE TABLE `aauth_pms` (
   `date_read` datetime DEFAULT NULL,
   `pm_deleted_sender` int(1) DEFAULT NULL,
   `pm_deleted_receiver` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);
 
 -- --------------------------------------------------------
 
@@ -156,7 +146,7 @@ CREATE TABLE `aauth_users` (
   `verification_code` text,
   `totp_secret` varchar(16) DEFAULT NULL,
   `ip_address` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ;
 
 --
 -- Dump dei dati per la tabella `aauth_users`
@@ -174,7 +164,7 @@ INSERT INTO `aauth_users` (`id`, `email`, `pass`, `username`, `banned`, `last_lo
 CREATE TABLE `aauth_user_to_group` (
   `user_id` int(11) UNSIGNED NOT NULL,
   `group_id` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+); 
 
 --
 -- Dump dei dati per la tabella `aauth_user_to_group`
@@ -182,8 +172,8 @@ CREATE TABLE `aauth_user_to_group` (
 
 INSERT INTO `aauth_user_to_group` (`user_id`, `group_id`) VALUES
 (1, 1),
-(1, 3),
-(2, 4);
+(1, 3);
+
 
 -- --------------------------------------------------------
 
@@ -196,7 +186,7 @@ CREATE TABLE `aauth_user_variables` (
   `user_id` int(11) UNSIGNED NOT NULL,
   `data_key` varchar(100) NOT NULL,
   `value` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);
 
 -- --------------------------------------------------------
 
@@ -213,14 +203,14 @@ CREATE TABLE `issue` (
   `milestone` varchar(128) DEFAULT NULL,
   `type` varchar(128) NOT NULL DEFAULT 'Bug',
   `text` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+); 
 
 --
 -- Dump dei dati per la tabella `issue`
 --
 
 INSERT INTO `issue` (`id`, `issue_id`, `title`, `slug`, `project`, `milestone`, `type`, `text`) VALUES
-(1, NULL, 'New issue', '', 'project 1', 'milestone', 'Bug', 'This is the first bug, Welcome to AtomBT'),
+(1, NULL, 'New issue', '', 'project 1', 'milestone', 'Bug', 'This is the first bug, Welcome to AtomBT');
 
 
 -- --------------------------------------------------------
@@ -234,7 +224,7 @@ CREATE TABLE `projects` (
   `title` varchar(128) NOT NULL DEFAULT 'Default title',
   `slug` varchar(128) NOT NULL,
   `text` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+); 
 
 --
 -- Dump dei dati per la tabella `projects`
@@ -254,7 +244,7 @@ CREATE TABLE `type` (
   `id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   `default` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+); 
 
 --
 -- Dump dei dati per la tabella `type`
@@ -262,8 +252,8 @@ CREATE TABLE `type` (
 
 INSERT INTO `type` (`id`, `name`, `default`) VALUES
 (1, 'Bug', 0),
-(2, 'Feature', 0);
-(3, 'Task',0);
+(2, 'Feature', 0),
+(3, 'Task', 0);
 
 --
 -- Indici per le tabelle scaricate
@@ -400,6 +390,4 @@ ALTER TABLE `projects`
 --
 ALTER TABLE `type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
