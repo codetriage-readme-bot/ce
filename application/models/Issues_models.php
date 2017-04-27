@@ -13,6 +13,17 @@ class Issues_Models extends CI_Model{
         $query = $this->db->get_where('issue', array('id' => $id));
         return $query->row_array();
 }
+    
+    public function get_issues_fixed(){
+        $query = $this->db->get_where('issue',array('status' => 'fixed'));
+        return $query->result_array();
+    }
+    
+    public function get_issues_status($status){
+        /* This is unimplemented, we will re-write this */
+        $query = $this->db->get_where('issue',array('status' => $status));
+        return $query->row_array();
+    }
    public function set_issues()
 {
  

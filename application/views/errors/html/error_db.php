@@ -59,6 +59,7 @@ p {
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+        <p>If you see often this message, please see documentation. If documentation can't help you, please write us an <a href="mailto:support@atombt.com">email</a>.</p>
 	</div>
 </body>
 </html>

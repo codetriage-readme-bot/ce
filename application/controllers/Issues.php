@@ -10,7 +10,7 @@ class Issues extends CI_Controller{
     
     public function index(){
          $data['issues'] = $this->Issues_models->get_issues();
-        $this->load->view('header');
+        $this->load->view('templates/navbar');
         $this->load->view('issues/home', $data);
         
     }

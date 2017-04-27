@@ -103,7 +103,7 @@ $autoload['helper'] = array('url','file','language');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('atombt');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array('atombt');
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Issues_models','Projects_models');
+$autoload['model'] = array('Issues_models','Projects_models','Milestone_models');

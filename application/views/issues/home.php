@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.css">
+
 <title>Issue View</title>
-<div class="container">
+<!--div class="container">
 <h2>Issues</h2>
 <a href="">Create</a>
 <table class="table">
@@ -21,5 +21,22 @@
     
     <footer>
     <small class="text-center"><?=lang('footer')?></small>
-    </footer>    
+    </footer-->   
+    
+    <div class="card m-3 w-100">
+  <h3 class="card-header bg-primary text-white">All Issues</h3>
+  <div class="card-block bg-faded">
+    <ul class="list-group list-group-flush">
+<?php foreach ($issues as $issue_item): ?>
+    <li class="list-group-item">
+   <?php echo $issue_item['id']; ?>
+   <?php  echo $issue_item['title']; ?>
+    <?php //echo $issue_item['text']; ?>
+        <div class=" pull pull-right">
+            <a href="<?=base_url()?>issues/view/<?=$issue_item['id']?>" class="btn btn-info">View</a></div>
+        </li>
+    <?php endforeach; ?>
+      </ul>
+ </div>
+</div>
 </div>

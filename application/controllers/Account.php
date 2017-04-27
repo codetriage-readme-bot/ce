@@ -107,4 +107,19 @@ $this->aauth->add_member('2','admin_group');
 		}
 	}
     
+    public function backup(){
+        $this->load->helper('file');
+		$this->load->dbutil();
+		$prefs = array(
+                'format'      => 'zip',             // gzip, zip, txt
+                'filename'    => 'database-full-AtomBT-backup_'.date('Y-m-d').'.zip',   
+                'add_drop'    => TRUE,              // Whether to add DROP TABLE statements to backup file
+                'add_insert'  => TRUE,              // Whether to add INSERT data to backup file
+                'newline'     => "\n"               // Newline character used in backup file
+              );
+        $backup =& $this->dbutil->backup($prefs);
+         $this->load->helper('download');
+			force_download('database-full-backup_'.date('Y-m-d').'.zip', $backup);
+    }
+    
 }

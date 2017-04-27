@@ -6,3 +6,4 @@ echo "\nERROR: ",
 	"\n\n",
 	$message,
 	"\n\n";
+echo "If you see often this message, please see documentation. If documentation can't help you, please write us an email.";

@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Message:  <?php echo $message; ?></p>
 <p>Filename: <?php echo $filepath; ?></p>
 <p>Line Number: <?php echo $line; ?></p>
+<p>If you see often this message, please see documentation. If documentation can't help you, please write us an <a href="mailto:support@atombt.com">email</a>.</p>
 
 <?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
 
@@ -29,5 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php endforeach ?>
 
 <?php endif ?>
+    
+<?php echo "If you see often this message, please see documentation. If documentation can't help you, please write us an email."; ?>
 
 </div>

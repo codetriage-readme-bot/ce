@@ -1,10 +1,14 @@
 
-<link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.css">
+
 <div class="container">
+    
 <?php echo validation_errors(); ?>
 <h1>Create a new issue</h1>
+<p>Get the most out of projects. Projects are the primary way to group issues. Projects can each have their unique set of participants, categories, and milestones.
+
+While many companies can participate in a project, you'll need to choose the primary company associated with that project for organizational purposes.</p>
     <hr>
-<?php echo form_open('issues/create'); ?>
+<?php echo form_open('projects/create'); ?>
     <div class="form-group">
     <label for="title">Title</label>
     <input type="input" name="title" class="form-control" /><br />
@@ -12,36 +16,11 @@
  <div class="form-group">
     <label for="text">Description</label>
     <textarea name="text" class="form-control" rows="10"></textarea><br />
-</div>
-    
- <div class="form-group">
-    <label for="text">Milestone</label>
-    <textarea name="milestone" class="form-control"></textarea>
-     </div>
- <div class="form-group">
-    <label for="text">Project</label>
-    <textarea name="project" class="form-control"></textarea>
-</div>
-<div class="form-group">
-    <select class="form-control">
-
-        <?php foreach ($issues as $issue_item): ?>
-        <option><?=$issue_item['id']?> | <?=$issue_item['title']?></option>
-        <?php endforeach; ?>
-</select>
     </div>
-    
-    <div class="form-group">
-    <label for="">Issue type</label>
-    <select class="form-control" name="type">
 
-        <?php foreach ($type as $type_item): ?>
-        <option><?=$type_item['name']?></option>
-        <?php endforeach; ?>
-</select>
-    </div>
+
     
-    <input type="submit" name="submit" value="Create news item" />
+    <input type="submit" name="submit" value="Create Projects" />
 
 </form>
 </div>

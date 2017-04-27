@@ -2,6 +2,12 @@
 
 class Projects extends CI_Controller {
     
+    public function __construct(){
+        parent::__construct();
+		$this->load->helper('url');
+		include APPPATH . 'third_party/style.php';
+    }
+    
     public function index(){
         $data['projects'] = $this->Projects_models->get_projects();
         $this->load->view('projects/home', $data);
@@ -37,8 +43,7 @@ class Projects extends CI_Controller {
          $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('text', 'Text', 'required');
         if ($this->form_validation->run() === FALSE) {
-            
-                    $data['project_item'] = $this->Projects_models->get_projects($id);
+        $data['project_item'] = $this->Projects_models->get_projects($id);
         $this->load->view('projects/edit',$data);
         }
         else {

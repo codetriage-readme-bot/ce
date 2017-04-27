@@ -5,9 +5,13 @@
 <hr>
 <a href="<?=base_url()?>/projects/create" class="btn btn-success">Create</a>
 
-
+<div class="panel panel-info">
+    <div class="panel-body">
+        You don't have any open projects right now, but you can change that by setting up a new project…
+    </div>
+    </div>
 <table class="table">
-    <thead><td>Issue id</td><td>Issue title</td><td>Issue text</td><td>Actions</td></thead>
+    <thead><td>Project id</td><td>Project title</td><td>Issue text</td><td>Actions</td></thead>
     <tbody>
     <?php foreach ($projects as $projects_item): ?>
     <tr>
