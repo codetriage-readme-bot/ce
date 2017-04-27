@@ -1,4 +1,5 @@
 # ATOM BUG TRACKER
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Powerful self-hosted, on-premise issue tracker software-easy, fast and intuitive.
 
