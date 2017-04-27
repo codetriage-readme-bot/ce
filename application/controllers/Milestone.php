@@ -10,6 +10,7 @@ class Milestone extends CI_Controller{
         
     public function index(){
         $data['milestone'] = $this->Milestone_models->get_milestone();
+        $this->load->view('templates/navbar');
         $this->load->view('milestone/home', $data);
     }
     
@@ -23,7 +24,7 @@ class Milestone extends CI_Controller{
 
     if ($this->form_validation->run() === FALSE)
     {   
-
+        $this->load->view('templates/navbar');
         $this->load->view('milestone/create');
 
 
@@ -43,6 +44,7 @@ class Milestone extends CI_Controller{
     $this->form_validation->set_rules('text', 'Text', 'required');
         if ($this->form_validation->run() === FALSE) {
         $data['milestone_item'] = $this->Milestone_models->get_milestone($id);
+        $this->load->view('templates/navbar');
         $this->load->view('milestone/edit',$data);
         }
         else {
@@ -64,6 +66,7 @@ class Milestone extends CI_Controller{
         {
                 show_404();
         }
+                $this->load->view('templates/navbar');
                 $this->load->view('milestone/view', $data);
         }
     }
