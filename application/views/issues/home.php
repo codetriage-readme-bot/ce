@@ -25,7 +25,7 @@
     
     <div class="card m-3 w-100">
   <h3 class="card-header bg-primary text-white">All Issues</h3>
-    <a href="<?base_url()?>issues/create">Create an issue</a>
+    <a href="<?=base_url()?>issues/create">Create an issue</a>
   <div class="card-block bg-faded">
     <ul class="list-group list-group-flush">
 <?php foreach ($issues as $issue_item): ?>
