@@ -84,11 +84,12 @@
     
 <div class="col-sm-3 col-md-6 col-lg-4">
 	<div class="card m-3 w-80">
-		<h6 class="card-header bg-info text-white">Issue Details</h6>
+		<h6 class="card-header bg-info text-white"><?=lang('details_issue')?></h6>
 		<div class="card-block">
 		   
+            
 		    	<div class="form-group row">
-				    <label for="projectSelect1" class="col-sm-2 col-form-label mr-2">Project</label>
+				    <label for="projectSelect1" class="col-sm-2 col-form-label mr-2"><?=lang('project')?></label>
 				    <div class="col-sm-9">
 					    <select class="form-control" id="projectSelect1" name="project">
 					      <?php foreach ($project as $project_item): ?>
@@ -98,7 +99,7 @@
 					</div>
 				</div>
 				<div class="form-group row">
-				    <label for="prioritySelect1" class="col-sm-2 col-form-label mr-2">Priority</label>
+				    <label for="prioritySelect1" class="col-sm-2 col-form-label mr-2"><?=lang('priority')?></label>
 				    <div class="col-sm-9">
 					    <select class="form-control" id="prioritySelect1">
 					      <option>Low</option>
@@ -150,7 +151,7 @@
 				    </select>
 				</div>
 				<div class="form-group">
-					<?php echo form_open('issues/create'); ?>
+					<?php echo form_open('label/create'); ?>
 						<div class="form-group">
     						<label for="label">New Label</label>
     						<input type="text" class="form-control" id="inputLabel2" aria-describedby="newLabelHelp" placeholder="Label Name">

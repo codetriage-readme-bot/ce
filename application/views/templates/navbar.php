@@ -146,5 +146,5 @@
     </form>
   </div>
 </nav>
-<div class="row">
-<div class="col-sm-3 col-md-6 col-lg-8">   
+<!--div class="row">
+<div class="col-sm-3 col-md-6 col-lg-8"-->   
